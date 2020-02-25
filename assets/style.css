@@ -1,0 +1,25 @@
+.header {
+  width: 100vw;
+  background-color: #448AFF;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #E0E0E0;
+}
+
+.main {
+  width: 660px;
+  background-color: #75e900;
+}
+
+.sidemenu {
+  width: 275px;
+  background-color: #ff9e22;
+}
+
+.footer {
+  width: 100vw;
+  background-color: #F8BBD0;
+}
