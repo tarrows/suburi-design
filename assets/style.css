@@ -21,7 +21,29 @@ a:link, a:visited, a:hover, a:active {
 
 .header {
   width: 100vw;
-  background-color: #448AFF;
+  padding: 28px 0 10px;
+  /* background: url('../img/bg-header.gif') rerpeat-x;*/
+  box-shadow: 0 0 10px 1px #E3E3E3;
+}
+
+.logo {
+  width: 226px;
+  height: 56px;
+  margin: 0 auto;
+  background-color: #2196F3;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.logo a:link, a:hover, a:visited, a:active {
+  color: #FFF;
 }
 
 .wrapper {
