@@ -21,12 +21,34 @@ func main() {
 	http.HandleFunc("/layout1", func(w http.ResponseWriter, r *http.Request) {
 		log.Printf("%s %s", r.Method, r.URL.Path)
 
+		type Content struct {
+			Title       string
+			Description string
+			Datetime    string
+			Datetext    string
+		}
+
+		type Topic struct {
+			Image   string
+			Alt     string
+			Content Content
+		}
+
 		type Layout1 struct {
 			GlobalNav []string
+			HotTopic  Topic
 		}
 
 		l1 := Layout1{
 			GlobalNav: []string{"HOME", "ABOUT", "NEWS", "TOPICS", "DOCS", "BLOG"},
+			HotTopic: Topic{
+				Image: "assets/elephant-4389434_1280.jpg", Alt: "elephant",
+				Content: Content{
+					Title:       "The water is literally pouring",
+					Description: "Elephant is just the tip of the iceberg, but considering that it remains hard to point to an unequivocal link between climate change and more frequent severe weather events.",
+					Datetime:    "2020-02-27",
+					Datetext:    "2020.02.27 TUE",
+				}},
 		}
 
 		t := template.Must(template.ParseFiles(filepath.Join(templatesDir, "layout1.html")))
