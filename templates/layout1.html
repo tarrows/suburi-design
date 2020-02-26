@@ -17,6 +17,13 @@
         <!-- Hidden Text -->CHICKEN SOUP
       </a>
     </h1>
+    <nav class="global-nav">
+      <ul>
+        {{range $idx, $text := .GlobalNav}}
+        <li class="nav-item{{if eq $idx 0}} active{{end}}"><a href="#">{{$text}}</a></li>
+        {{end}}
+      </ul>
+    </nav>
   </header>
   <div class="wrapper">
     <main class="main">main</main>

@@ -20,8 +20,17 @@ func main() {
 
 	http.HandleFunc("/layout1", func(w http.ResponseWriter, r *http.Request) {
 		log.Printf("%s %s", r.Method, r.URL.Path)
+
+		type Layout1 struct {
+			GlobalNav []string
+		}
+
+		l1 := Layout1{
+			GlobalNav: []string{"HOME", "ABOUT", "NEWS", "TOPICS", "DOCS", "BLOG"},
+		}
+
 		t := template.Must(template.ParseFiles(filepath.Join(templatesDir, "layout1.html")))
-		_ = t.ExecuteTemplate(w, "layout1.html", nil)
+		_ = t.ExecuteTemplate(w, "layout1.html", l1)
 	})
 
 	http.Handle("/assets/", gzippify(http.StripPrefix("/assets/", http.FileServer(http.Dir(assetsDir)))))
