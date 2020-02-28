@@ -5,14 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Layout2</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link rel="stylesheet" href="assets/reset.css">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/layout.css">
 </head>
 
 <body>
-  <header class="header"></header>
-  <section class="about"></section>
+  <header class="header">
+    <p class="subtitle">{{.Subtitle}}</p>
+    <h1 class="title">{{.Title}}</h1>
+    <p class="description">{{.Description}}</p>
+  </header>
+  <section class="about">
+    <p style="height: 800vh;">
+      verylongcontent
+    </p>
+  </section>
   <section class="works"></section>
   <section class="contact"></section>
   <footer class="footer"></footer>

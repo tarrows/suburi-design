@@ -55,6 +55,25 @@ func main() {
 		_ = t.ExecuteTemplate(w, "layout1.html", l1)
 	})
 
+	http.HandleFunc("/layout2", func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("%s %s", r.Method, r.URL.Path)
+
+		type Layout2 struct {
+			Title       string
+			Subtitle    string
+			Description string
+		}
+
+		l2 := Layout2{
+			Title:       "NeQUE PORRO QUISQUAM",
+			Subtitle:    "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			Description: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		}
+
+		t := template.Must(template.ParseFiles(filepath.Join(templatesDir, "layout2.html")))
+		_ = t.ExecuteTemplate(w, "layout2.html", l2)
+	})
+
 	http.Handle("/assets/", gzippify(http.StripPrefix("/assets/", http.FileServer(http.Dir(assetsDir)))))
 
 	log.Println("Server listening on", *addr)
