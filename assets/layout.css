@@ -48,3 +48,23 @@ body {
   color: #888888;
   font-size: 1.6rem;
 }
+
+.button {
+  display: inline-block;
+  width: 200px;
+  padding: 20px;
+  border-radius: 20px;
+  background: #afa58d;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.button--showy {
+  background: #f1b400;
+}
